@@ -64,8 +64,10 @@ const sidebarConfig = [
     icon: BookOpen,
     children: [
       { name: "Admission Info", urdu: "داخلہ معلومات", target: "admission-info-add-content", path: "/admission-info" },
-      { name: "Admission Forms", urdu: "داخلہ فارم", target: "admission-forms-list-content", dataKey: "admissionForms", path: "/admission-forms" },
-      { name: "All Admissions", urdu: "تمام داخلے", target: "all-admissions-list-content", dataKey: "allAdmissions", path: "/all-admissions" },
+      { name: "Admission Forms", urdu: "داخلہ فارم", target: "admission-forms-list-content", dataKey: "admissionForms", path: "/addadmission" },
+      { name: "All Admissions", urdu: "تمام داخلے", target: "all-admissions-list-content", dataKey: "allAdmissions", path: "/listadmission" },
+      { name: "Competition App", urdu: "تمام داخلے", target: "competition-app-list-content", dataKey: "competitionapp", path: "/listapplicationcompt" },
+       { name: "Admission Renewal", urdu: "تمام داخلے", target: "admission-renewal-list-content", dataKey: "admissionrenewal", path: "/listrenewal" },
     ],
   },
   {

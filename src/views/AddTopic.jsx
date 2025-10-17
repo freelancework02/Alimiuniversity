@@ -23,7 +23,7 @@ export default function AddTopic() {
       const fetchTopic = async () => {
         try {
           setLoadingTopic(true);
-          const res = await axios.get(`https://alim-university-backend.onrender.com/api/topics/${id}`);
+          const res = await axios.get(`https://api.darululoomalimia.com/api/topics/${id}`);
           const topic = res.data;
 
           setFormData({
@@ -74,12 +74,12 @@ export default function AddTopic() {
 
       if (id) {
         formDataToSend.append("topic_id", id);
-        await axios.patch("https://alim-university-backend.onrender.com/api/topics/update", formDataToSend, {
+        await axios.patch("https://api.darululoomalimia.com/api/topics/update", formDataToSend, {
           headers: { "Content-Type": "multipart/form-data" },
         });
         alert("✅ Topic updated successfully!");
       } else {
-        await axios.post("https://alim-university-backend.onrender.com/api/topics/add", formDataToSend, {
+        await axios.post("https://api.darululoomalimia.com/api/topics/add", formDataToSend, {
           headers: { "Content-Type": "multipart/form-data" },
         });
         alert("✅ Topic added successfully!");

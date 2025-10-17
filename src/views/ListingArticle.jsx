@@ -15,7 +15,7 @@ export default function ListingArticle() {
 
   const fetchArticles = async () => {
     try {
-      const res = await axios.get("https://alim-university-backend.onrender.com/api/articles");
+      const res = await axios.get("https://api.darululoomalimia.com/api/articles");
       setArticles(res.data);
     } catch (err) {
       console.error("❌ Error fetching articles:", err);
@@ -29,7 +29,7 @@ export default function ListingArticle() {
     if (!window.confirm("🗑️ Are you sure you want to delete this article?")) return;
 
     try {
-      await axios.delete(`https://alim-university-backend.onrender.com/api/articles/delete/${article_id}`);
+      await axios.delete(`https://api.darululoomalimia.com/api/articles/delete/${article_id}`);
       alert("✅ Article deleted successfully!");
       setArticles((prev) => prev.filter((a) => a.article_id !== article_id));
     } catch (err) {

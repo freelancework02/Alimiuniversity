@@ -29,7 +29,7 @@ export default function AddArticle() {
 
     const fetchArticle = async () => {
       try {
-        const res = await axios.get(`https://alim-university-backend.onrender.com/api/articles/${id}`);
+        const res = await axios.get(`https://api.darululoomalimia.com/api/articles/${id}`);
         const a = Array.isArray(res.data) ? res.data[0] : res.data;
 
         if (!a) {
@@ -128,13 +128,13 @@ export default function AddArticle() {
         // ✅ Important: include article_id for backend
         form.append("article_id", id);
 
-        await axios.patch("https://alim-university-backend.onrender.com/api/articles/update", form, {
+        await axios.patch("https://api.darululoomalimia.com/api/articles/update", form, {
           headers: { "Content-Type": "multipart/form-data" },
         });
 
         alert("✅ Article updated successfully!");
       } else {
-        await axios.post("https://alim-university-backend.onrender.com/api/articles/add", form, {
+        await axios.post("https://api.darululoomalimia.com/api/articles/add", form, {
           headers: { "Content-Type": "multipart/form-data" },
         });
 

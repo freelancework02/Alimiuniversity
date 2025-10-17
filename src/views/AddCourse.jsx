@@ -23,7 +23,7 @@ export default function AddCourse() {
   useEffect(() => {
     const fetchDepartments = async () => {
       try {
-        const { data } = await axios.get("https://alim-university-backend.onrender.com/api/departments");
+        const { data } = await axios.get("https://api.darululoomalimia.com/api/departments");
         console.log("📦 Departments API response:", data);
 
         const departmentList = Array.isArray(data)
@@ -51,7 +51,7 @@ export default function AddCourse() {
 
     const fetchCourse = async () => {
       try {
-        const { data } = await axios.get(`https://alim-university-backend.onrender.com/api/courses/${id}`);
+        const { data } = await axios.get(`https://api.darululoomalimia.com/api/courses/${id}`);
         if (data && data.length > 0) {
           const course = data[0];
           setFormData({
@@ -85,11 +85,11 @@ export default function AddCourse() {
     try {
       if (id) {
         // matches PATCH /api/courses/update/:id
-        await axios.patch(`https://alim-university-backend.onrender.com/api/courses/update/${id}`, formData);
+        await axios.patch(`https://api.darululoomalimia.com/api/courses/update/${id}`, formData);
         alert("✅ Course updated successfully!");
       } else {
         // matches POST /api/courses/add
-        await axios.post("https://alim-university-backend.onrender.com/api/courses/add", formData);
+        await axios.post("https://api.darululoomalimia.com/api/courses/add", formData);
         alert("✅ Course created successfully!");
       }
 

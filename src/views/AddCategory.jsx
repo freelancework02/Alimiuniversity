@@ -20,7 +20,7 @@ export default function AddCategory() {
       const fetchCategory = async () => {
         try {
           setLoading(true);
-          const res = await fetch(`https://alim-university-backend.onrender.com/api/categories/${id}`);
+          const res = await fetch(`https://api.darululoomalimia.com/api/categories/${id}`);
           const data = await res.json();
           setFormData({
             category_title: data.category_title || "",
@@ -48,8 +48,8 @@ export default function AddCategory() {
 
     try {
       const apiUrl = id
-        ? "https://alim-university-backend.onrender.com/api/categories/update"
-        : "https://alim-university-backend.onrender.com/api/categories/add";
+        ? "https://api.darululoomalimia.com/api/categories/update"
+        : "https://api.darululoomalimia.com/api/categories/add";
 
       const method = id ? "PATCH" : "POST";
 

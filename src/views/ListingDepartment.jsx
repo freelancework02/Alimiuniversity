@@ -11,7 +11,7 @@ export default function ListingDepartment() {
 
   const fetchDepartments = async () => {
     try {
-      const res = await fetch("https://alim-university-backend.onrender.com/api/departments");
+      const res = await fetch("https://api.darululoomalimia.com/api/departments");
       const data = await res.json();
 
       // Ensure departments is always an array
@@ -36,7 +36,7 @@ export default function ListingDepartment() {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this department?")) {
       try {
-        const res = await fetch(`https://alim-university-backend.onrender.com/api/departments/delete/${id}`, { method: "DELETE" });
+        const res = await fetch(`https://api.darululoomalimia.com/api/departments/delete/${id}`, { method: "DELETE" });
         const result = await res.json();
 
         if (!res.ok) throw new Error(result.message || "Failed to delete");

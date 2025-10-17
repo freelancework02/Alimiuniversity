@@ -13,7 +13,7 @@ export default function ListingTopic() {
   useEffect(() => {
     const fetchTopics = async () => {
       try {
-        const res = await axios.get("https://alim-university-backend.onrender.com/api/topics");
+        const res = await axios.get("https://api.darululoomalimia.com/api/topics");
         setTopics(res.data);
         setLoading(false);
       } catch (err) {
@@ -33,7 +33,7 @@ export default function ListingTopic() {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this topic?")) {
       try {
-        await axios.delete(`https://alim-university-backend.onrender.com/api/topics/delete/${id}`);
+        await axios.delete(`https://api.darululoomalimia.com/api/topics/delete/${id}`);
         setTopics((prev) => prev.filter((t) => t.topic_id !== id));
       } catch (err) {
         console.error("❌ Error deleting topic:", err);

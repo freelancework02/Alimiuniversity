@@ -18,7 +18,7 @@ export default function AddDepartment() {
   // Fetch department by ID if editing
   useEffect(() => {
     if (id) {
-      fetch(`https://alim-university-backend.onrender.com/api/departments/${id}`)
+      fetch(`https://api.darululoomalimia.com/api/departments/${id}`)
         .then((res) => res.json())
         .then((data) => setFormData({
           name: data.name || "",
@@ -39,7 +39,7 @@ export default function AddDepartment() {
     e.preventDefault();
     try {
       const method = id ? "PATCH" : "POST";
-      const url = id ? `https://alim-university-backend.onrender.com/api/departments/update/${id}` : "https://alim-university-backend.onrender.com/api/departments/add";
+      const url = id ? `https://api.darululoomalimia.com/api/departments/update/${id}` : "https://api.darululoomalimia.com/api/departments/add";
 
       const response = await fetch(url, {
         method,

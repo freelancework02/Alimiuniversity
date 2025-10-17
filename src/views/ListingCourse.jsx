@@ -11,7 +11,7 @@ export default function ListingCourse() {
   // ✅ Fetch all courses
   const fetchCourses = async () => {
     try {
-      const { data } = await axios.get("https://alim-university-backend.onrender.com/api/courses");
+      const { data } = await axios.get("https://api.darululoomalimia.com/api/courses");
       console.log("📦 Courses API Response:", data);
 
       // Handle MySQL stored procedure array format
@@ -46,7 +46,7 @@ export default function ListingCourse() {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete(`https://alim-university-backend.onrender.com/api/courses/delete/${id}`);
+      await axios.delete(`https://api.darululoomalimia.com/api/courses/delete/${id}`);
       alert("🗑️ Course deleted successfully!");
       fetchCourses(); // Refresh list
     } catch (error) {

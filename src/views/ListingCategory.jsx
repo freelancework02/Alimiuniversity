@@ -13,7 +13,7 @@ export default function ListingCategory() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch("https://alim-university-backend.onrender.com/api/categories");
+        const response = await fetch("https://api.darululoomalimia.com/api/categories");
         if (!response.ok) throw new Error("Failed to fetch categories");
         const data = await response.json();
         setCategories(data);
@@ -34,7 +34,7 @@ export default function ListingCategory() {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this category?")) {
       try {
-        const response = await fetch(`https://alim-university-backend.onrender.com/api/categories/delete/${id}`, {
+        const response = await fetch(`https://api.darululoomalimia.com/api/categories/delete/${id}`, {
           method: "DELETE",
         });
         if (!response.ok) throw new Error("Failed to delete category");
